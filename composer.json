@@ -2,6 +2,9 @@
     "name": "blank-framework/invokable-controller-route",
     "description": "Library that contains components for creating routes using invokable controller classes",
     "type": "library",
+    "require": {
+        "php": "^8.0"
+    },
     "require-dev": {
         "phpstan/phpstan": "^1.12",
         "squizlabs/php_codesniffer": "^3.10",
