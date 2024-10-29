@@ -3,6 +3,7 @@
 namespace BlankFramework\InvokableControllerRoute;
 
 use BlankFramework\InvokableControllerRoute\Interfaces\InvokableControllerContainerInterface;
+use BlankFramework\RoutingInterfaces\RouteInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -17,7 +18,7 @@ use Psr\Http\Message\ResponseInterface;
  * @param class-string<InvokableControllerContainerInterface> $connectControllerContainer
  * @param class-string<InvokableControllerContainerInterface> $traceControllerContainer
  */
-class InvokableControllerRoute
+class InvokableControllerRoute implements RouteInterface
 {
     public function __construct(
         private ?string $getControllerContainer = null,
@@ -86,7 +87,7 @@ class InvokableControllerRoute
         }
     }
 
-    public function run(RequestInterface $request): ResponseInterface
+    public function handleRequest(RequestInterface $request): ResponseInterface
     {
         $controllerClassName = match (strtolower($request->getMethod())) {
             'get' => $this->getControllerContainer,
