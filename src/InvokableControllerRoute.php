@@ -8,18 +8,30 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @param class-string<InvokableControllerContainerInterface> $getControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $postControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $putControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $deleteControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $patchControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $headControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $optionsControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $connectControllerContainer
- * @param class-string<InvokableControllerContainerInterface> $traceControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $getControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $postControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $putControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $deleteControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $patchControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $headControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $optionsControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $connectControllerContainer
+ * @property class-string<InvokableControllerContainerInterface> $traceControllerContainer
  */
 class InvokableControllerRoute implements RouteInterface
 {
+    /**
+     * @param class-string<InvokableControllerContainerInterface> $getControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $postControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $putControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $deleteControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $patchControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $headControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $optionsControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $connectControllerContainer
+     * @param class-string<InvokableControllerContainerInterface> $traceControllerContainer
+     * @throws \InvalidArgumentException
+     */
     public function __construct(
         private ?string $getControllerContainer = null,
         private ?string $postControllerContainer = null,
